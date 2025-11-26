@@ -1,0 +1,12 @@
+# PhpStorm project files
+.idea/
+
+# Composer dependencies
+/vendor/
+
+# Log files
+*.log
+*.tmp
+.env
+# Operating system specific files
+Thumbs.db
