@@ -4,7 +4,9 @@ use App\Controllers\ArticleController;
 use App\Views\ArticleView;
 use App\Models\Article;
 
-require '../vendor/autoload.php';
+
+require '/home/user/www/calkylDg/vendor/autoload.php';
+require '/home/user/www/calkylDg/config/settings.php';
 
 //require_once('src/Models/Article.php');
 //require_once('src/Views/ArticleView.php');
@@ -12,7 +14,9 @@ require '../vendor/autoload.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
-
+$whoops = new Whoops\Run;
+$whoops->pushHandler(new Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
 $article = new Article();
 $article_view = new ArticleView();

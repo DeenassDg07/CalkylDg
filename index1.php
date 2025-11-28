@@ -29,6 +29,9 @@ switch ($uri) {
     case '/calc':
         include_once ('./templates/pages/calc.php');
         break;
+    case '/novosti':
+        include_once ('./templates/pages/novosti.php');
+        break;
     default:
         //include_once('./templates/pages/404.php');
         break;
