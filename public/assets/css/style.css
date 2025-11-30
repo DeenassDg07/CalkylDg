@@ -81,13 +81,12 @@ footer {
 }
 
 
-
-     /* Общие стили */
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Times New Roman', Times, serif;
@@ -145,18 +144,18 @@ body {
     text-align: center;
 }
 
-.main-headline h1 {
-    font-size: 36px;
-    font-family: Georgia, serif;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
+    .main-headline h1 {
+        font-size: 36px;
+        font-family: Georgia, serif;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
 
-.main-headline .byline {
-    font-style: italic;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
+    .main-headline .byline {
+        font-style: italic;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
 
 /* Стили для новостей */
 .news-item {
@@ -164,24 +163,24 @@ body {
     break-inside: avoid;
 }
 
-.news-item h2 {
-    font-size: 22px;
-    font-family: Georgia, serif;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
+    .news-item h2 {
+        font-size: 22px;
+        font-family: Georgia, serif;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
 
-.news-item .news-date {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 8px;
-}
+    .news-item .news-date {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 8px;
+    }
 
-.news-item p {
-    margin-bottom: 15px;
-    text-align: justify;
-}
+    .news-item p {
+        margin-bottom: 15px;
+        text-align: justify;
+    }
 
 /* Стили для выделения */
 .highlight {
@@ -208,11 +207,11 @@ blockquote {
     break-inside: avoid;
 }
 
-.news-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    .news-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
 .caption {
     font-size: 12px;

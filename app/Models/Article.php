@@ -27,6 +27,9 @@ class Article
     {
         return $this->articles;
     }
-
+     public function find(int $id): ?array
+    {
+        return $this->articles[$id] ?? null;
+    }
 
 }
