@@ -1,6 +1,6 @@
 ﻿{% extends "base.twig" %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}Главная страница - {{ parent() }}{% endblock %}
 
 {% block content %}
 <div class="home-page">
