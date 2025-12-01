@@ -10,29 +10,9 @@ class TwigService
 {
     private Environment $twig;
 
-    public function __construct()
+    public function __construct(Environment $twig)
     {
-        // Пути к шаблонам и кэшу
-        $templatePath = __DIR__ . '/../../templates';
-        $cachePath = __DIR__ . '/../../var/cache/twig';
-
-        // Создаем папку для кэша, если её нет
-        if (!is_dir($cachePath)) {
-            mkdir($cachePath, 0755, true);
-        }
-
-        // Создаем загрузчик шаблонов
-        $loader = new FilesystemLoader($templatePath);
-
-        // Настройки Twig
-        $options = [
-            'cache' => $cachePath,
-            'auto_reload' => true,
-            'debug' => true
-        ];
-
-        // Создаем экземпляр Twig
-        $this->twig = new Environment($loader, $options);
+        $this->twig = $twig;
 
         // Добавляем расширение для отладки
         $this->twig->addExtension(new DebugExtension());
@@ -60,7 +40,7 @@ class TwigService
     private function addGlobalVariables(): void
     {
         $this->twig->addGlobal('current_year', date('Y'));
-        $this->twig->addGlobal('app_name', 'Flat-File CMS');
+        $this->twig->addGlobal('app_name', 'Наш сайт');
         $this->twig->addGlobal('base_url', $this->getBaseUrl());
     }
 

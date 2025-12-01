@@ -9,9 +9,13 @@ require __DIR__.'/vendor/autoload.php';
 //require_once('src/Models/Article.php');
 //require_once('src/Views/ArticleView.php');
 //require_once('src/Controllers/ArticleController.php');
-
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+$whoops = new \Whoops\Run();
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+$whoops->register();
+
 
 
 $article = new Article();

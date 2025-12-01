@@ -13,40 +13,45 @@ class ArticleView
         $this->twigService = $twigService;
     }
 
-    public function showArticlesList(array $articles): void
+    public function showArticlesList(array $articles): string
     {
         $html = $this->twigService->render('articles/articles_list.twig', [
             'articles' => $articles,
-            'title' => 'Список статей',
+            'title' => 'РЎРЎРЎР ',
             'articles_count' => count($articles)
         ]);
         
-        echo $html;
+        return $html;
     }
 
-    public function showArticle(array $article): void
+    public function showArticle(array $article): string
     {
         if (empty($article)) {
-            $this->showNotFound();
-            return;
+            return $this->showNotFound();
         }
 
         $html = $this->twigService->render('articles/article_detail.twig', [
             'article' => $article,
-            'title' => $article['title'] ?? 'Статья'
+            'title' => $article['title'] ?? 'пїЅпїЅпїЅпїЅпїЅпїЅ'
         ]);
         
-        echo $html;
+        return $html;
     }
 
-    public function showNotFound(): void
+    public function showNotFound(): string
     {
         http_response_code(404);
         $html = $this->twigService->render('errors/404.twig', [
-            'title' => 'Статья не найдена',
-            'message' => 'Запрашиваемая статья не существует.'
+            'title' => 'пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
+            'message' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.'
         ]);
         
-        echo $html;
+        return $html;
+    }
+
+    public function showHomePage(): string
+    {
+        $html = $this->twigService->render('pages/home.twig', []);
+        return $html;
     }
 }
