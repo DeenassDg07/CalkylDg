@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     background-color: rgba(255, 253, 253, 0.89);
 }
-}
+
 .header {
     background-color: #790604;
     color: white;
@@ -39,7 +39,7 @@ body {
 }
 
 .articles {
-    width: 70%;
+
     padding: 1em;
 }
 .article {
@@ -73,7 +73,7 @@ footer {
     background: url("/images/bg-1.jpeg");
     margin: 0;
     padding: 0;
-    height: 100vh; /* На всю высоту окна */
+    height: 100px; /* На всю высоту окна */
     background-size: cover;      /* Растягивает изображение, чтобы покрыть весь фон */
     background-position: center center; /* Центрирует изображение */
     background-repeat: no-repeat; /* Запрещает повторение фона */
@@ -244,5 +244,7 @@ blockquote {
         column-count: 1;
     }
 }
+
+
 
 

@@ -1,10 +1,30 @@
-{% extends "base.twig." %}
+{% extends "base.twig" %}
 
-{% block title %}Калькулятор - {{ parent() }}{% endblock %}
+{% block title %}РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ - {{ parent() }}{% endblock %}
 
 {% block content %}
-<div class="calculator-page">
-    <h1>Калькулятор</h1>
-    <p>Здесь будет калькулятор</p>
-</div>
+    <div class="content">
+        <div class="articles">
+            <div class="calculator">
+                <h1>РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ</h1>
+                <form method="POST" action="/operation">
+                    <input type="number" name="num1" value="{{ num1 }}" required />
+                    <select name="operator">
+                        <option value="+" {% if operator == '+' %}selected{% endif %}>+</option>
+                        <option value="-" {% if operator == '-' %}selected{% endif %}>-</option>
+                        <option value="*" {% if operator == '*' %}selected{% endif %}>*</option>
+                        <option value="/" {% if operator == '/' %}selected{% endif %}>/</option>
+                    </select>
+                    <input type="number" name="num2" value="{{ num2 }}" required />
+                    <button type="submit">Р’С‹С‡РёСЃР»РёС‚СЊ</button>
+                </form>
+                <h3>РСЃС‚РѕСЂРёСЏ РѕРїРµСЂР°С†РёР№</h3>
+                {% if history is not empty %}
+                    <pre>{{ history }}</pre>
+                {% else %}
+                    <p>РСЃС‚РѕСЂРёСЏ РѕРїРµСЂР°С†РёР№ РїСѓСЃС‚Р°.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

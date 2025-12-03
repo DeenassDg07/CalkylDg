@@ -42,8 +42,8 @@ class ArticleView
     {
         http_response_code(404);
         $html = $this->twigService->render('errors/404.twig', [
-            'title' => '������ �� �������',
-            'message' => '������������� ������ �� ����������.'
+            'title' => '(',
+            'message' => ')'
         ]);
         
         return $html;
@@ -52,6 +52,13 @@ class ArticleView
     public function showHomePage(): string
     {
         $html = $this->twigService->render('pages/home.twig', []);
+        return $html;
+
+    }
+    public function calc(string $history, ?double $num1 = null, ?double $num2 = null, ?string $operator = null, ?string $result = null): string
+    {
+        $html = $this->twigService->render('pages/calc.twig', ['history' => $history, 'num1' => $num1,'num2' => $num2,
+            'operator' => $operator, 'result' => $result]);
         return $html;
     }
 }

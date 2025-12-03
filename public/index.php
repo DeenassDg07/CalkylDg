@@ -48,7 +48,7 @@ use Laminas\Diactoros\ServerRequestFactory;
 use League\Container\Container;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-
+session_start();
 // �������� ����� ������ (������ ��� ����������)
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
@@ -89,6 +89,10 @@ $request = ServerRequestFactory::fromGlobals($_SERVER, $_GET, $_POST, $_COOKIE, 
 //Создание маршрутов
 $router->map('GET', '/', 'App\Controllers\ArticleController::showHome');
 $router->map('GET', '/articles', 'App\Controllers\ArticleController::showArticlesList');
+$router->map('GET', '/calc', 'App\Controllers\ArticleController::calc');
+$router->map('POST', '/operation', 'App\Controllers\ArticleController::historycalc');
+
+
 
 $response = $router->dispatch($request);
 (new \Laminas\HttpHandlerRunner\Emitter\SapiEmitter)->emit($response);
@@ -115,3 +119,4 @@ $response = $router->dispatch($request);
 //        'title' => '������� ��������'
 //    ]);
 //}
+//calc
