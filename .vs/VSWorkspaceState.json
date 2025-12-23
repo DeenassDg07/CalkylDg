@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Core",
+    "\\app\\Models",
+    "\\docs",
+    "\\docs\\images",
+    "\\public",
+    "\\var",
+    "\\var\\cache",
+    "\\var\\cache\\twig"
+  ],
+  "SelectedNode": "\\public\\htaccess",
+  "PreviewInSolutionExplorer": false
+}

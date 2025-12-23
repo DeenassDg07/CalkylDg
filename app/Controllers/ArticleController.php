@@ -11,15 +11,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class ArticleController
 {
-//    public Article $article;
-//    public ArticleView $articleView;
 
-//    public function __construct(Article $article, ArticleView $articleView)
-//    {
-//        $this->article = $article;
-//        $this->articleView = $articleView;
-//
-//    }
 
     public function showArticlesList() : ResponseInterface
     {

@@ -1,0 +1,8 @@
+
+	{
+		"id": "user_admin_001",
+		"username": "admin",
+		"password": "$2y$10$Kb8HcG.3X0JN9qYx7vB6.uL8H9zQ2W3sT4U5V6W7X8Y9Z0A1B2C3D4E5F6G7H8I9J0",
+		"created_at": "2024-01-01 00:00:00",
+		"role": "admin"
+	}

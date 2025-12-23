@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Controllers\AuthController;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
@@ -14,10 +15,10 @@ class TwigService
     {
         $this->twig = $twig;
 
-        // Добавляем расширение для отладки
+      
         $this->twig->addExtension(new DebugExtension());
 
-        // Добавляем глобальные переменные
+        
         $this->addGlobalVariables();
     }
 
@@ -26,27 +27,28 @@ class TwigService
         return $this->twig;
     }
 
-    /**
-     * Рендерит шаблон с переданными параметрами
-     */
+   
     public function render(string $template, array $context = []): string
     {
         return $this->twig->render($template, $context);
     }
 
-    /**
-     * Добавляет глобальные переменные доступные во всех шаблонах
-     */
     private function addGlobalVariables(): void
     {
         $this->twig->addGlobal('current_year', date('Y'));
         $this->twig->addGlobal('app_name', 'Наш сайт');
         $this->twig->addGlobal('base_url', $this->getBaseUrl());
+        
+     
+        $this->twig->addGlobal('auth', [
+            'isAuthenticated' => AuthController::isAuthenticated(),
+            'username' => AuthController::getUsername(),
+            'isAdmin' => AuthController::isAdmin(),
+            'user' => AuthController::getCurrentUser()
+        ]);
     }
 
-    /**
-     * Получает базовый URL приложения
-     */
+  
     private function getBaseUrl(): string
     {
         $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') 
